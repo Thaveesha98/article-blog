@@ -1,8 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const Card = ({ title, text, author }) => {
+const Card = ({ title, text, author, id }) => {
+  const navigate = useNavigate();
   return (
-    <div className="post">
+    <div
+      className="post"
+      onClick={() => {
+        navigate(`/artical/${id}`);
+      }}>
       <div className="title">{title}</div>
       <div className="body">{text}</div>
       <div className="user-wrapper">

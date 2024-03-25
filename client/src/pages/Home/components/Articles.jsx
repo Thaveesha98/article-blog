@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useEffect, useState } from "react";
 import Card from "../../../shared/Card/Card";
 
 const Articles = () => {
@@ -8,10 +7,10 @@ const Articles = () => {
 
   useEffect(() => {
     axios.get("http://localhost:3001/posts").then((response) => {
-      console.log(response.data);
       setListOfPosts(response.data);
     });
   }, []);
+
   return (
     <div
       style={{
@@ -21,11 +20,12 @@ const Articles = () => {
         justifyContent: "center",
         gap: "20px",
       }}>
-      {listOfPosts.map((value, id) => (
+      {listOfPosts.map((post) => (
         <Card
-          title={value.title}
-          text={value.titleText}
-          author={value.userName}
+          id={post.id}
+          title={post.title}
+          text={post.titleText}
+          author={post.userName}
         />
       ))}
     </div>
