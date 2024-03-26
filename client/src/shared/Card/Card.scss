@@ -7,6 +7,10 @@
   padding: 20px 10px;
   color: $baseBlack;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   .title {
     padding: 5% 0%;
     display: flex;
@@ -19,9 +23,12 @@
   .body {
     width: 100%;
     padding: 5% 0;
+    height: 20px;
+    overflow-y: hidden;
   }
   .author {
     position: absolute;
+    width: auto;
     bottom: 5%;
     right: 5%;
     opacity: 0.5;

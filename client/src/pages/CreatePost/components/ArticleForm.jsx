@@ -23,7 +23,7 @@ const ArticleForm = () => {
       axios
         .post("http://localhost:3001/posts", values)
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           resetForm();
         })
         .catch((error) => {

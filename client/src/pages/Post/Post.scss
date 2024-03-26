@@ -1,30 +1,76 @@
 .artical-page {
+  position: relative;
   .artical-container {
-    position: relative;
+    position: absolute;
+    top: 0%;
+    left: 0%;
     width: 50%;
     border-radius: 20px;
     padding: 2%;
     background-color: $blue2;
 
     .title {
-      font-size: 28px;
+      display: flex;
+      justify-content: center;
+      font-size: 48px;
       font-weight: 700;
       padding-bottom: 20px;
     }
     .body {
+      display: flex;
+      justify-content: center;
+      height: 70vh;
+      font-size: 28px;
+      align-items: center;
       font-weight: 200;
       padding-bottom: 50px;
       letter-spacing: 0.02rem;
     }
     .author {
+      font-size: 18px;
       position: absolute;
       top: 5%;
       right: 5%;
     }
     .update {
+      font-size: 18px;
       position: absolute;
       bottom: 5%;
       right: 5%;
+    }
+  }
+  .comment-container {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 40%;
+    border: 2px solid $blue2;
+    height: 75vh;
+    border-radius: 20px;
+    padding: 2%;
+
+    .display-comment {
+      .comment-wrapper {
+        border: 2px solid $blue2;
+        padding: 2%;
+        border-radius: 20px;
+        margin-top: 2%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        .comment {
+          margin-bottom: 20px;
+        }
+
+        .date {
+          font-size: 12px;
+          opacity: 0.5;
+          position: absolute;
+          bottom: 5%;
+          right: 5%;
+        }
+      }
     }
   }
 }
