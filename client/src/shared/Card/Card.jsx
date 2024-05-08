@@ -7,7 +7,7 @@ const Card = ({ title, text, author, id }) => {
     <div
       className="post"
       onClick={() => {
-        navigate(`/artical/${id}`);
+        navigate(`/article/${id}`);
       }}>
       <div className="title">{title}</div>
       <div className="body">{text}</div>

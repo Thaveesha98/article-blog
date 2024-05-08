@@ -3,6 +3,8 @@ import Home from "./pages/Home/Home";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Post from "./pages/Post/Post";
 import NavBar from "./shared/NavBar/NavBar";
+import SignUp from "./pages/auth/Signup/SignUp";
+import Login from "./pages/auth/Login/Login";
 
 const App = () => {
   return (
@@ -11,8 +13,10 @@ const App = () => {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/createpost" element={<CreatePost />} />
-          <Route path="/artical/:id" element={<Post />} />
+          <Route path="/createPost" element={<CreatePost />} />
+          <Route path="/article/:id" element={<Post />} />
+          <Route path="/registration" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
     </div>

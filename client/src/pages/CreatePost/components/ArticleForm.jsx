@@ -2,8 +2,10 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const ArticleForm = () => {
+  const navigate = useNavigate("");
   const formik = useFormik({
     initialValues: {
       title: "",
@@ -29,6 +31,7 @@ const ArticleForm = () => {
         .catch((error) => {
           console.error("Error:", error);
         });
+      navigate("/");
     },
   });
 

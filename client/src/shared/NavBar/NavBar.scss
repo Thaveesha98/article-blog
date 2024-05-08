@@ -1,20 +1,37 @@
 .nav-bar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 5%;
-  gap: 20px;
   height: 50px;
   background-color: $blue1;
   margin-bottom: 10px;
   border-radius: 20px;
 
-  .item {
-    color: aliceblue;
-    font-size: larger;
-    font-weight: 700;
-    text-decoration: none;
+  .main {
+    display: flex;
+    gap: 20px;
+    .item {
+      color: aliceblue;
+      font-size: larger;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .active {
+      color: $baseBlack;
+    }
   }
-  .active {
-    color: $baseBlack;
+  .auth {
+    display: flex;
+    gap: 20px;
+    .item {
+      color: aliceblue;
+      font-size: larger;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .active {
+      color: $baseBlack;
+    }
   }
 }

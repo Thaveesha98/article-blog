@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { Comments } = require("../models");
+const { validateToken } = require("../middlewares/AuthMiddleWare");
 
 router.get("/:postId", async (req, res) => {
   const postId = req.params.postId;
@@ -12,14 +13,14 @@ router.get("/:postId", async (req, res) => {
   res.json(comments);
 });
 
-router.post("/", async (req, res) => {
+router.post("/", validateToken, async (req, res) => {
   try {
     const comment = req.body;
     const newComment = await Comments.create(comment);
     res.json(newComment);
   } catch (error) {
     console.error(error);
-    res.json({ error: "Failed to create Commentt" });
+    res.json({ error: "Failed to create Comment" });
   }
 });
 

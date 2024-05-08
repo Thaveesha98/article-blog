@@ -6,18 +6,35 @@ const NavBar = () => {
 
   return (
     <div className="nav-bar">
-      <Link
-        to="/"
-        className={`item ${location.pathname === "/" ? "active" : ""}`}>
-        Home Page
-      </Link>
-      <Link
-        to="/createpost"
-        className={`item ${
-          location.pathname === "/createpost" ? "active" : ""
-        }`}>
-        Create Post
-      </Link>
+      <div className="main">
+        <Link
+          to="/"
+          className={`item ${location.pathname === "/" ? "active" : ""}`}>
+          Home Page
+        </Link>
+        <Link
+          to="/createPost"
+          className={`item ${
+            location.pathname === "/createPost" ? "active" : ""
+          }`}>
+          Create Post
+        </Link>
+      </div>
+
+      <div className="auth">
+        <Link
+          to="/login"
+          className={`item ${location.pathname === "/login" ? "active" : ""}`}>
+          Login
+        </Link>
+        <Link
+          to="/registration"
+          className={`item ${
+            location.pathname === "/registration" ? "active" : ""
+          }`}>
+          SignUp
+        </Link>
+      </div>
     </div>
   );
 };

@@ -35,7 +35,11 @@ const Post = () => {
 
   const updateComments = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/comments/${id}`);
+      const response = await axios.get(`http://localhost:3001/comments/${id}`, {
+        headers: {
+          accessToken: sessionStorage.getItem("accessToken"),
+        },
+      });
       setCommentObj(response.data);
     } catch (error) {
       console.error("Error updating comments:", error);
@@ -51,8 +55,8 @@ const Post = () => {
   }
 
   return (
-    <div className="artical-page">
-      <div className="artical-container">
+    <div className="article-page">
+      <div className="article-container">
         <div className="title">{postObj.title}</div>
         <div className="body">{postObj.titleText}</div>
         <div className="author">By: {postObj.userName}</div>

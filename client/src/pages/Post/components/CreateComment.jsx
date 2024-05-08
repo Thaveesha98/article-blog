@@ -12,17 +12,29 @@ const CreateComment = ({ PostId, updateComments }) => {
     }
 
     try {
-      await axios.post("http://localhost:3001/comments", {
-        commentBody: newComment,
-        PostId: PostId,
-      });
-      setNewComment("");
-      updateComments();
+      await axios
+        .post(
+          "http://localhost:3001/comments",
+          {
+            commentBody: newComment,
+            PostId: PostId,
+          },
+          {
+            headers: {
+              accessToken: sessionStorage.getItem("accessToken"),
+            },
+          }
+        )
+        .then(() => {
+          updateComments();
+          setNewComment("");
+        });
+      // console.log(newComment);
+      // console.log(PostId);
     } catch (error) {
       console.error("Error adding comment:", error);
     }
   };
-
   const handleInputChange = (event) => {
     setNewComment(event.target.value);
   };
